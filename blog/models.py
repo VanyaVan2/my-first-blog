@@ -16,3 +16,15 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Task(models.Model):
+    title  = models.CharField(max_length=400)
+    comment = models.TextField()
+    status = models.BooleanField()
+    created_date = models.DateTimeField(default=timezone.now)
+    duration = models.DateTimeField(blank=True, null=True)
+
+    def complete(self):
+        self.status = True
+        self.save()
+        
