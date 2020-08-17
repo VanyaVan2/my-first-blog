@@ -6,7 +6,7 @@
             <div class="date">
                 <p>Создано: {{ task.created_date }}</p>
             </div>
-            <h1><a href="/">{{ task.title }}</a></h1>
+            <h1><a href="{% url 'task_detail' pkT=task.pk %}">{{ task.title }}</a></h1>
             <p>{{ task.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
